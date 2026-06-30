@@ -133,6 +133,7 @@ export default function SettingsPage() {
         <Input
           label={t('settings.shopStartDate')}
           type="date"
+          lang="en"
           value={shopStartDate}
           onChange={e => setShopStartDate(e.target.value)}
         />
