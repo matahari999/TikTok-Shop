@@ -1,0 +1,137 @@
+2026년 베트남 SaaS 실시간 데이터
+
+시장 규모 (확인됨)
+
+- 베트남 SaaS 시장: 2025년 $2.14억 → 2032년 $5.02억 (CAGR 12.95%)
+- SME 97%가 베트남 전체 기업 — 정부가 2030년까지 50만개 SME 디지털화 목표
+
+---
+지금 당장 뜨거운 것 3가지
+
+1. TikTok Shop 관리 툴
+- TikTok Shop 베트남 점유율 41%, 성장률 69% (2025 Q1)
+- Shopee + TikTok Shop이 e-commerce GMV 97% 장악
+- 2026년 4월부터 수수료 정책 복잡해짐 → 셀러들이 마진 계산 툴 절실히 필요
+
+2. Zalo Mini App / OA 연동 SaaS
+- Zalo 베트남인 85% 사용, 월 8천만 명
+- Mini App 월 사용자 1,300만, 현재 3,465개 앱 운영 중
+- Zalo OA + CRM 연동 에이전시/툴이 "데이터 굶주림" 상태라고 현지 리포트에서 표현
+
+3. AI 라이브스트리머 / 커머스 자동화
+- Vietcetera "2026 빅 아이디어"에서 명시: 24시간 AI 라이브스트리머 (TikTok/Shopee용)
+- 베트남 문화 맥락 맞춘 AI가 실시간 판매하는 툴 — 아직 공백
+
+---
+결론
+
+가장 빠른 진입점: TikTok Shop 셀러용 수익/재고/수수료 통합 대시보드
+
+이미 수백만 셀러가 있고, 수수료 정책 변경으로 지금 당장 통증이 생긴 시장입니다. Next.js + Supabase로 빠르게 만들 수 있어요.
+
+Sources:
+- Vietnam SaaS Market Forecast (https://mobilityforesights.com/product/vietnam-software-as-a-service-saas-market)
+- Vietnam's Big Ideas to Build in 2026 - Vietcetera (https://vietcetera.com/en/the-next-wave-vietnams-big-ideas-to-build-in-2026)
+- Zalo 85% of Vietnamese - VietnamNet (https://vietnamnet.vn/en/zalo-used-by-85-of-vietnamese-surpassing-global-apps-2406688.html)
+- TikTok Shop Vietnam 2026 (https://affninja.com/tiktok-shop-vietnam-affiliate-funnel/)
+- Vietnam SME Digital Transformation Plan 2026-2030 (https://blog.investvietnam.co/vietnam-sme-digital-transformation-plan-2026-2030/)
+- Vietnam Digital Economy 2026 (https://digitalinasia.com/vietnam-digital-market-overview-2026/)
+
+
+찾았습니다. 결론부터 말씀드릴게요.
+
+---
+시장 현황 (실시간)
+
+경쟁자 이미 있음
+
+┌───────────────────┬──────────────────┬──────────────────────┐
+│        툴         │       특징       │         약점         │
+├───────────────────┼──────────────────┼──────────────────────┤
+│                   │ 중국산,          │ 영어/중국어 중심,    │
+│ BigSeller         │ 무료티어,        │ 마진분석 없음        │
+│                   │ 주문관리         │                      │
+├───────────────────┼──────────────────┼──────────────────────┤
+│ MISA eShop        │ 베트남산,        │ 무겁고 복잡,         │
+│                   │ 종합관리         │ 중소셀러 부담        │
+├───────────────────┼──────────────────┼──────────────────────┤
+│ Salework/Abittik  │ 베트남 특화      │ 수익/마진 계산 없음  │
+│                   │ 주문관리         │                      │
+├───────────────────┼──────────────────┼──────────────────────┤
+│ Kalodata/FastMoss │ 글로벌 분석툴    │ $100+/월, 영어,      │
+│                   │                  │ 베트남 특화 X        │
+└───────────────────┴──────────────────┴──────────────────────┘
+
+수수료 폭탄이 지금 터짐 (핵심)
+
+- 2025년: 수수료 2~3%
+- 2026년 3월: 마켓플레이스 셀러 12.5%로 폭등
+- 트랜잭션 수수료 별도 6%
+- 주문당 VND 3,000 추가
+
+→ 셀러들이 "내가 지금 손해 보고 파는 건지도 모른다" 상태
+
+---
+진짜 공백
+
+기존 툴들은 주문관리에 집중. 하지만 지금 셀러들이 진짜 필요한 건:
+
+▎ "수수료 12.5% + 트랜잭션 6% + VND 3,000 + 배송비 + 원가 다 빼면 실제로 얼마 남는지"
+
+이걸 자동으로 계산해주는 베트남어 + 저렴한 + 모바일 친화적 툴이 없음.
+
+---
+만들면 팔리나?
+
+예, 조건이 맞습니다:
+- 수수료 변경이 지금 막 터진 통증 → 타이밍 완벽
+- 베트남 TikTok Shop 셀러 수백만 명
+- 기존 툴은 이 기능에 집중 안 함
+- 가격 100,000~200,000 VND/월 ($4~8) 이면 진입장벽 낮음
+
+---
+제품 방향 (MVP)
+
+"베트남 TikTok Shop 수익 계산기 + 대시보드"
+1. TikTok Shop API 연동 → 주문 자동 수집
+2. 수수료 자동 계산 (카테고리별 12.5% 등)
+3. SKU별 실제 마진 표시
+4. 마진 0% 이하 상품 경보
+
+Next.js + Supabase로 4~6주 안에 MVP 가능합니다. 해볼까요?
+
+Sources:
+- TikTok Shop April Commission Hike - Forest Shipping (https://www.forestshipping.com/tiktok-shop-april-commission-fee-hike)
+- TOP 7 phần mềm quản lý TikTok Shop - MISA (https://www.misaeshop.vn/13067/phan-mem-quan-ly-ban-hang-tiktok-shop/)
+- Best TikTok Shop Analytics Tools 2026 - Dashboardly (https://www.dashboardly.io/post/best-tiktok-shop-tools)
+- Shopee vs Lazada vs TikTok Shop Fees 2026 (https://digitalinasia.com/shopee-lazada-tiktok-shop-fees-2026/)
+
+✻ Baked for 1m 4s
+
+완료됐습니다. 앱 구조 요약:
+
+---
+D:\tiktok-shop-vn — http://localhost:3333 실행 중
+
+┌───────────────┬───────────────┬────────────────────────────┐
+│    페이지     │     경로      │            기능            │
+├───────────────┼───────────────┼────────────────────────────┤
+│ 로그인/회원가 │ /login        │ Supabase Auth              │
+│ 입            │               │                            │
+├───────────────┼───────────────┼────────────────────────────┤
+│ 대시보드      │ /app/dashboar │ 총매출/이익/AreaChart/저마 │
+│               │ d             │ 진 경보                    │
+├───────────────┼───────────────┼────────────────────────────┤
+│ 사산품        │ /app/products │ CRUD + 마진 뱃지           │
+│               │               │ (초록/노랑/빨강)           │
+├───────────────┼───────────────┼────────────────────────────┤
+│ 수익 계산기   │ /app/calculat │ 실시간 TikTok 수수료 계산  │
+│               │ or            │ + 개선 제안                │
+├───────────────┼───────────────┼────────────────────────────┤
+│ 주문 기록     │ /app/orders   │ 주문 저장 + 총이익 집계    │
+└───────────────┴───────────────┴────────────────────────────┘
+
+다음 할 일:
+1. Supabase 프로젝트 생성해서 VITE_SUPABASE_URL과 VITE_SUPABASE_ANON_KEY를 .env에 입력
+2. supabase/migrations/001_init.sql SQL Editor에서 실행 (products + orders 테이블 + RLS)
+3. 서버 재시작 → 회원가입 후 사용 시작
