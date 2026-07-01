@@ -43,6 +43,7 @@ const translations = {
     'nav.orders': 'Đơn hàng',
     'nav.ads': 'Quảng cáo',
     'nav.settings': 'Cài đặt phí',
+    'nav.guide': 'Hướng dẫn sử dụng',
     'nav.subtitle': 'Quản lý lợi nhuận',
 
     // Dashboard
@@ -273,6 +274,7 @@ const translations = {
     'settings.shopProfile': 'Thông tin shop',
     'settings.shopStartDate': 'Ngày bắt đầu shop',
     'settings.shopStartDateDesc': 'Ngày bạn bắt đầu bán hàng trên TikTok Shop (dùng để tính thời gian thử thách)',
+    'settings.formulaAutoSwitch': '* Phân chia tự động theo ngày đặt hàng (order_date). Đây là giá trị mặc định cho đơn hàng mới.',
   },
 
   en: {
@@ -317,6 +319,7 @@ const translations = {
     'nav.orders': 'Orders',
     'nav.ads': 'Ad Spend',
     'nav.settings': 'Fee Settings',
+    'nav.guide': 'User Guide',
     'nav.subtitle': 'Profit management',
 
     // Dashboard
@@ -541,6 +544,7 @@ const translations = {
     'settings.shopProfile': 'Shop information',
     'settings.shopStartDate': 'Shop start date',
     'settings.shopStartDateDesc': 'The date you started selling on TikTok Shop (used for probation calculation)',
+    'settings.formulaAutoSwitch': '* Auto-switches based on order date (order_date). This is the default for new orders.',
   },
 } as const
 

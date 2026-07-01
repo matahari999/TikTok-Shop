@@ -3,6 +3,7 @@ import { Plus, ShoppingBag, Upload, List, AlertTriangle } from 'lucide-react'
 import Card from '@/shared/ui/Card'
 import Button from '@/shared/ui/Button'
 import Input from '@/shared/ui/Input'
+import DateInput from '@/shared/ui/DateInput'
 import Badge from '@/shared/ui/Badge'
 import { supabase } from '@/shared/lib/supabase'
 import { useAuthStore } from '@/features/auth/authStore'
@@ -259,7 +260,7 @@ export default function OrdersPage() {
                 </div>
                 <Input label={t('ord.quantity')} type="number" value={form.quantity}
                   onChange={e => setForm(p => ({ ...p, quantity: e.target.value }))} min="1" />
-                <Input label={t('ord.date')} type="date" value={form.order_date}
+                <DateInput label={t('ord.date')} value={form.order_date}
                   onChange={e => setForm(p => ({ ...p, order_date: e.target.value }))} />
                 <Input label={t('ord.affiliateRate')} type="number" step="0.1" value={form.affiliate_rate}
                   onChange={e => setForm(p => ({ ...p, affiliate_rate: e.target.value }))}

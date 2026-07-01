@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Calculator, AlertTriangle, CheckCircle, Info } from 'lucide-react'
 import Card from '@/shared/ui/Card'
 import Input from '@/shared/ui/Input'
+import DateInput from '@/shared/ui/DateInput'
 import { formatCurrency, calcTikTokFees, detectFormulaVersion, calculateTransactionFee } from '@/shared/lib/utils'
 import { useLang } from '@/shared/lib/langStore'
 
@@ -73,7 +74,7 @@ export default function CalculatorPage() {
           <Info className="w-4 h-4 text-[#EE1D52]" /> {t('calc.feeBreakdown')}
         </h2>
         <div className="grid grid-cols-2 gap-4">
-          <Input label={t('calc.orderDate')} type="date" value={orderDate}
+          <DateInput label={t('calc.orderDate')} value={orderDate}
             onChange={e => setOrderDate(e.target.value)} />
           <div className="flex flex-col gap-1">
             <label className="text-xs font-medium text-gray-600">{t('calc.formulaVersion')}</label>

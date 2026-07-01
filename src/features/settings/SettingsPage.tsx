@@ -3,6 +3,7 @@ import { Settings, Save, Store } from 'lucide-react'
 import Card from '@/shared/ui/Card'
 import Button from '@/shared/ui/Button'
 import Input from '@/shared/ui/Input'
+import DateInput from '@/shared/ui/DateInput'
 import { supabase } from '@/shared/lib/supabase'
 import { useToast } from '@/shared/ui/Toast'
 import { useLang } from '@/shared/lib/langStore'
@@ -130,10 +131,8 @@ export default function SettingsPage() {
           <Store className="w-4 h-4 text-[#EE1D52]" /> {t('settings.shopProfile')}
         </h2>
         <p className="text-xs text-gray-500 mb-3">{t('settings.shopStartDateDesc')}</p>
-        <Input
+        <DateInput
           label={t('settings.shopStartDate')}
-          type="date"
-          lang="en"
           value={shopStartDate}
           onChange={e => setShopStartDate(e.target.value)}
         />
@@ -173,7 +172,7 @@ export default function SettingsPage() {
             {t('settings.formulaAfter2026')}
           </button>
         </div>
-        <p className="text-xs text-gray-400 mt-2">* 주문일자(order_date) 기준으로 자동 분기됩니다. 이 설정은 신규 주문의 기본값입니다.</p>
+        <p className="text-xs text-gray-400 mt-2">{t('settings.formulaAutoSwitch')}</p>
       </Card>
 
       {/* Fee table by category */}

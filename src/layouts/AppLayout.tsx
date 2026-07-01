@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { LayoutDashboard, Package, Calculator, ShoppingBag, LogOut, TrendingUp, Megaphone, Settings } from 'lucide-react'
+import { LayoutDashboard, Package, Calculator, ShoppingBag, LogOut, TrendingUp, Megaphone, Settings, BookOpen } from 'lucide-react'
 import { useAuthStore } from '@/features/auth/authStore'
 import LangToggle from '@/shared/ui/LangToggle'
 import { useLang } from '@/shared/lib/langStore'
@@ -16,6 +16,7 @@ export default function AppLayout() {
     { to: '/app/orders', icon: ShoppingBag, label: t('nav.orders') },
     { to: '/app/ads', icon: Megaphone, label: t('nav.ads') },
     { to: '/app/settings', icon: Settings, label: t('nav.settings') },
+    { to: '/huong-dan', icon: BookOpen, label: t('nav.guide') },
   ]
 
   const handleLogout = async () => {

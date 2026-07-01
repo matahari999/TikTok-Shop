@@ -3,6 +3,7 @@ import { Plus, Megaphone, Trash2 } from 'lucide-react'
 import Card from '@/shared/ui/Card'
 import Button from '@/shared/ui/Button'
 import Input from '@/shared/ui/Input'
+import DateInput from '@/shared/ui/DateInput'
 import { supabase } from '@/shared/lib/supabase'
 import { useAuthStore } from '@/features/auth/authStore'
 import { formatCurrency, formatDate } from '@/shared/lib/utils'
@@ -90,7 +91,7 @@ export default function AdsPage() {
         <Card>
           <h2 className="text-sm font-semibold text-gray-700 mb-4">{t('ads.addNew')}</h2>
           <form onSubmit={handleAdd} className="grid grid-cols-2 gap-4">
-            <Input label={t('ads.date')} type="date" value={form.spend_date}
+            <DateInput label={t('ads.date')} value={form.spend_date}
               onChange={e => setForm(p => ({ ...p, spend_date: e.target.value }))} />
             <Input label={t('ads.campaign')} value={form.campaign_name}
               onChange={e => setForm(p => ({ ...p, campaign_name: e.target.value }))}

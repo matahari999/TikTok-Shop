@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import {
   TrendingUp, Calculator, ShoppingBag, Target,
   Megaphone, BarChart3, ShieldCheck, Smartphone, Download,
-  ChevronRight, Star, ArrowUpRight, CheckCircle2, X,
+  ChevronRight, Star, ArrowUpRight, CheckCircle2, X, BookOpen,
 } from 'lucide-react'
 import { useAuthStore } from '@/features/auth/authStore'
 import { useLang } from '@/shared/lib/langStore'
 import LangToggle from '@/shared/ui/LangToggle'
 import usePwaInstall from '@/shared/lib/usePwaInstall'
+import QrSection from '@/shared/ui/QrSection'
 
 function FloatingElement({ delay, size, x, y, color }: { delay: number; size: number; x: string; y: string; color: string }) {
   return (
@@ -74,6 +75,11 @@ export default function LandingPage() {
             <span className="font-bold text-gray-900 text-sm">TikTok Shop VN</span>
           </div>
           <div className="flex items-center gap-3">
+            {/* 네비바 안내 링크 */}
+            <button onClick={() => navigate('/huong-dan')}
+              className="hidden md:flex items-center gap-1.5 text-gray-500 hover:text-gray-800 text-sm font-medium px-3 py-2 transition-colors">
+              <BookOpen className="w-3.5 h-3.5" /> Hướng dẫn
+            </button>
             <LangToggle />
             {user ? (
               <button onClick={() => navigate('/app/dashboard')}
@@ -108,33 +114,54 @@ export default function LandingPage() {
 
         <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-28 md:pt-28 md:pb-36">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-rose-100 text-[#EE1D52] text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <Star className="w-3 h-3" />
-              Công cụ quản lý lợi nhuận TikTok Shop #1 tại Việt Nam
+            {/* 무료 뱃지 */}
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <CheckCircle2 className="w-3 h-3" />
+              Miễn phí hoàn toàn — Không cần thẻ tín dụng
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
-              Quản lý lợi nhuận{' '}
+              Tính lợi nhuận thực từ{' '}
               <span className="bg-gradient-to-r from-[#EE1D52] to-orange-500 bg-clip-text text-transparent">
                 TikTok Shop
               </span>
               <br />
-              thông minh hơn mỗi ngày
+              tự động & chính xác
             </h1>
             <p className="text-lg text-gray-500 mt-6 max-w-xl leading-relaxed">
-              Tính toán phí, theo dõi đơn hàng, phân tích lợi nhuận sau phí TikTok Shop 2026.
+              Nhập đơn hàng — hệ thống tự tính phí TikTok Shop 2026, quảng cáo và lợi nhuận ròng.
               Dành cho người bán hàng Việt Nam.
             </p>
+
+            {/* 핵심 기능 3가지 체크리스트 */}
+            <div className="flex flex-col gap-2.5 mt-5">
+              {[
+                'Tự động tính phí hoa hồng theo từng danh mục sản phẩm',
+                'Tính lợi nhuận thực sau quảng cáo & tiếp thị liên kết',
+                'Bảng điều khiển hòa vốn — thấy ngay điểm sinh lời',
+              ].map(text => (
+                <div key={text} className="flex items-center gap-2.5 text-sm text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                  {text}
+                </div>
+              ))}
+            </div>
+
             <div className="flex flex-wrap gap-3 mt-8">
               <button onClick={handleGetStarted}
                 className="inline-flex items-center gap-2 bg-[#EE1D52] text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[#cc1847] transition-all shadow-lg shadow-rose-200 hover:shadow-xl hover:-translate-y-0.5">
-                Bắt đầu ngay <ChevronRight className="w-4 h-4" />
+                Đăng ký miễn phí <ChevronRight className="w-4 h-4" />
               </button>
               <button
-                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => navigate('/huong-dan')}
                 className="inline-flex items-center gap-2 bg-white text-gray-700 px-6 py-3 rounded-xl font-medium text-sm border border-gray-200 hover:border-gray-300 transition-all">
-                Khám phá tính năng
+                <BookOpen className="w-4 h-4" /> Xem hướng dẫn
               </button>
             </div>
+            {/* 무료 안내 문구 */}
+            <p className="text-xs text-gray-400 mt-3 flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
+              Hiện tại hoàn toàn miễn phí · Không cần thẻ tín dụng · Xóa tài khoản bất cứ lúc nào
+            </p>
 
             {/* Social proof */}
             <div className="flex items-center gap-6 mt-10 pt-8 border-t border-gray-100">
@@ -353,7 +380,10 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* QR 코드 섹션 */}
+      <QrSection />
+
+      {/* 푸터: 법적 링크 + 안내 페이지 링크 */}
       <footer className="border-t border-gray-100 py-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -363,9 +393,15 @@ export default function LandingPage() {
               </div>
               <span className="text-sm font-bold text-gray-900">TikTok Shop VN</span>
             </div>
-            <p className="text-xs text-gray-400">
-              {t('auth.footer')} · Dành cho người bán hàng Việt Nam
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-400">
+              <a href="/huong-dan" className="hover:text-gray-600 transition-colors">Hướng dẫn sử dụng</a>
+              <span className="text-gray-200">|</span>
+              <a href="/chinh-sach-bao-mat" className="hover:text-gray-600 transition-colors">Chính sách bảo mật</a>
+              <span className="text-gray-200">|</span>
+              <a href="/dieu-khoan-su-dung" className="hover:text-gray-600 transition-colors">Điều khoản sử dụng</a>
+              <span className="text-gray-200">|</span>
+              <span>{t('auth.footer')}</span>
+            </div>
           </div>
         </div>
       </footer>
